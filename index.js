@@ -9,12 +9,12 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 const app = express();
 dotenv.config();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 3001;
 
 // MIDDLEWARES
 app.use(express.json());
 app.use(cors({
-    origin:['https://otpfront.vercel.app'],
+    origin:'https://otpfront.vercel.app',
     methods:['POST','OPTIONS']
 }));
 
