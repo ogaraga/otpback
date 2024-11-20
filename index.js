@@ -14,15 +14,12 @@ const port = process.env.PORT || 5001;
 // MIDDLEWARES
 app.use(express.json());
 app.use(cors({
-    origin:['https://one-time-password-omega.vercel.app'],
+    origin:['https://otpfront.vercel.app'],
     methods:['POST','OPTIONS']
 }));
 
 // DATABASE CONNECTION
 mongoose.connect(process.env.DB_URI).then(() => console.log('db connected!')).catch(() => console.log('db disconnected!'))
-app.get('/', (req, res) => {
-    res.send('Home!')
-})
 
 //REGISTER API ROUTES
 app.post('/send-otp', async (req, res) => {
